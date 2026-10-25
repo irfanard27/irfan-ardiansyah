@@ -1,0 +1,163 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimelineItem from "../components/TimelineItem.astro";
+import WorkCard from "../components/WorkCard.astro";
+import { experiences } from "../data/experience";
+import { works } from "../data/works";
+
+const featuredExperience = experiences.filter((item) =>
+	["stashworks-lead", "stashworks-senior", "dnet-frontend", "espace"].includes(item.id),
+);
+
+const featuredWorks = works.filter((item) => item.featured);
+---
+
+<BaseLayout
+	title="Muhammad Irfan Ardiansyah — Senior Software Engineer | Frontend Specialist"
+	description="Senior Software Engineer with 10+ years of experience building scalable SaaS platforms, enterprise applications, and cloud-native systems. Bridging product design and engineering."
+>
+	<div class="flex flex-col gap-24 sm:gap-32">
+		<section class="flex flex-col gap-6 py-12 sm:py-20">
+			<div class="flex max-w-3xl flex-col gap-4">
+				<div class="text-xs uppercase tracking-[0.28em] text-neutral-500">
+					Senior Software Engineer | Frontend Specialist
+				</div>
+				<h1 class="text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl">Muhammad Irfan Ardiansyah</h1>
+				<p class="max-w-2xl text-lg text-neutral-600 sm:text-xl">
+					Bridging product design and engineering to turn complex business needs into scalable, user-centric
+					products. Experienced in leading technical initiatives, mentoring engineers, and delivering
+					high-performance SaaS platforms.
+				</p>
+				<div class="flex flex-wrap items-center gap-3">
+					<a
+						class="inline-flex items-center gap-2 rounded-full border border-neutral-900 bg-neutral-900 px-6 py-2.5 font-medium text-white transition hover:brightness-90"
+						href="/experience"
+					>
+						View Experience
+					</a>
+					<a
+						class="inline-flex items-center gap-2 rounded-full border border-neutral-200 px-6 py-2.5 font-medium text-neutral-900 transition hover:border-neutral-900"
+						href="/works"
+					>
+						View Works
+					</a>
+				</div>
+				<div class="flex flex-wrap items-center gap-2 text-neutral-600">
+					<span>Surabaya, Indonesia (GMT+7)</span>
+					<span>•</span>
+					<span>Available for Remote Global Roles</span>
+				</div>
+			</div>
+		</section>
+
+		<section class="flex flex-col gap-8">
+			<header class="flex flex-col gap-2">
+				<div class="text-xs uppercase tracking-[0.28em] text-neutral-500">Featured Experience</div>
+				<h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Experience-first, proof-oriented</h2>
+				<p class="max-w-2xl text-neutral-600">
+					A focused selection of roles where I've led frontend initiatives, optimized performance, and
+					built scalable systems.
+				</p>
+			</header>
+			<div class="relative flex flex-col gap-6 before:absolute before:left-[0.4rem] before:top-2 before:bottom-2 before:w-px before:bg-gradient-to-b before:from-transparent before:via-neutral-200 before:to-transparent">
+				{featuredExperience.slice(0, 3).map((item) => (
+					<TimelineItem item={item} showRelated={true} />
+				))}
+			</div>
+			<a class="inline-flex items-center gap-2 text-neutral-600 transition-colors hover:text-neutral-900" href="/experience">
+				View all experience →
+			</a>
+		</section>
+
+		<section class="flex flex-col gap-8">
+			<header class="flex flex-col gap-2">
+				<div class="text-xs uppercase tracking-[0.28em] text-neutral-500">Featured Works</div>
+				<h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Selected proof of work</h2>
+				<p class="max-w-2xl text-neutral-600">Projects that showcase architecture, performance optimization, and product delivery.</p>
+			</header>
+			<div class="grid gap-6 sm:grid-cols-2">
+				{featuredWorks.slice(0, 4).map((item) => (
+					<WorkCard item={item} />
+				))}
+			</div>
+			<a class="inline-flex items-center gap-2 text-neutral-600 transition-colors hover:text-neutral-900" href="/works">
+				View all works →
+			</a>
+		</section>
+
+		<section class="flex flex-col gap-8">
+			<header class="flex flex-col gap-2">
+				<div class="text-xs uppercase tracking-[0.28em] text-neutral-500">Skills Snapshot</div>
+				<h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Core capabilities</h2>
+			</header>
+			<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+				<article class="flex flex-col gap-4 rounded-2xl bg-white p-6 shadow-[0_10px_30px_-20px_rgba(15,23,42,0.25)] sm:p-8">
+					<h3 class="text-lg tracking-tight">Frontend</h3>
+					<div class="flex flex-wrap gap-2">
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">React.js</span>
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">TypeScript</span>
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">Next.js</span>
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">Astro</span>
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">Redux Toolkit</span>
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">GraphQL</span>
+					</div>
+				</article>
+				<article class="flex flex-col gap-4 rounded-2xl bg-white p-6 shadow-[0_10px_30px_-20px_rgba(15,23,42,0.25)] sm:p-8">
+					<h3 class="text-lg tracking-tight">Backend & Data</h3>
+					<div class="flex flex-wrap gap-2">
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">Ruby on Rails</span>
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">Node.js</span>
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">PostgreSQL</span>
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">MySQL</span>
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">MongoDB</span>
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">Redis</span>
+					</div>
+				</article>
+				<article class="flex flex-col gap-4 rounded-2xl bg-white p-6 shadow-[0_10px_30px_-20px_rgba(15,23,42,0.25)] sm:p-8">
+					<h3 class="text-lg tracking-tight">Cloud, DevOps & AI</h3>
+					<div class="flex flex-wrap gap-2">
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">GCP</span>
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">Docker</span>
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">Kubernetes</span>
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">CI/CD</span>
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">GitHub Actions</span>
+						<span class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600">AI-assisted Development</span>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section class="flex flex-col gap-6">
+			<header class="flex flex-col gap-2">
+				<div class="text-xs uppercase tracking-[0.28em] text-neutral-500">Contact</div>
+				<h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Let's build something great</h2>
+				<p class="max-w-2xl text-neutral-600">Available for Remote Global Roles. Open to frontend/lead frontend opportunities.</p>
+			</header>
+			<div class="flex flex-wrap items-center gap-3">
+				<a
+					class="inline-flex items-center gap-2 rounded-full border border-neutral-900 bg-neutral-900 px-6 py-2.5 font-medium text-white transition hover:brightness-90"
+					href="mailto:personal.irfanardiansyah@gmail.com"
+				>
+					Email Me
+				</a>
+				<a
+					class="inline-flex items-center gap-2 rounded-full border border-neutral-200 px-6 py-2.5 font-medium text-neutral-900 transition hover:border-neutral-900"
+					href="https://www.linkedin.com/in/irfanardiansyah/"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					LinkedIn
+				</a>
+				<a
+					class="inline-flex items-center gap-2 rounded-full border border-neutral-200 px-6 py-2.5 font-medium text-neutral-900 transition hover:border-neutral-900"
+					href="https://github.com/irfanardiansyah"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					GitHub
+				</a>
+			</div>
+		</section>
+	</div>
+</BaseLayout>
+

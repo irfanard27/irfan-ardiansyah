@@ -1,0 +1,55 @@
+---
+import type { WorkItem } from "../data/works";
+
+interface Props {
+	item: WorkItem;
+}
+
+const { item } = Astro.props;
+---
+
+<article class="flex w-full flex-col gap-4 rounded-2xl bg-white p-6 shadow-[0_10px_30px_-20px_rgba(15,23,42,0.25)] sm:p-8">
+	<header class="flex flex-col gap-1">
+		<div class="flex flex-wrap items-center gap-2 text-[0.98rem] text-neutral-600">
+			<span>{item.type === "confidential" ? "Confidential" : item.type === "freelance" ? "Freelance" : "Work"}</span>
+			<span>•</span>
+			<span>{item.role}</span>
+		</div>
+		<h3 class="text-xl tracking-tight sm:text-2xl">{item.title}</h3>
+	</header>
+	<p class="text-neutral-600">{item.description}</p>
+	{item.impact && (
+		<p class="text-neutral-900">
+			<strong>Impact:</strong> {item.impact}
+		</p>
+	)}
+	<div class="flex flex-col gap-3">
+		<p class="text-xs uppercase tracking-[0.28em] text-neutral-500">Tech Stack</p>
+		<div class="flex flex-wrap gap-2">
+			{item.techStack.map((tech) => (
+				<span class="inline-flex items-center rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-600">
+					{tech}
+				</span>
+			))}
+		</div>
+	</div>
+	{item.links && (item.links.live || item.links.demo || item.links.github) && (
+		<div class="flex flex-wrap items-center gap-4 text-[0.98rem] text-neutral-600">
+			{item.links.live && (
+				<a href={item.links.live} target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-neutral-900">
+					Live →
+				</a>
+			)}
+			{item.links.demo && (
+				<a href={item.links.demo} target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-neutral-900">
+					Demo →
+				</a>
+			)}
+			{item.links.github && (
+				<a href={item.links.github} target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-neutral-900">
+					GitHub →
+				</a>
+			)}
+		</div>
+	)}
+</article>

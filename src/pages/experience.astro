@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimelineItem from "../components/TimelineItem.astro";
+import { experiences } from "../data/experience";
+---
+
+<BaseLayout
+	title="Experience — Muhammad Irfan Ardiansyah"
+	description="Full professional experience timeline of Muhammad Irfan Ardiansyah. Senior Software Engineer with measurable impact across SaaS, enterprise, and freelance projects."
+>
+	<div class="flex flex-col gap-10">
+		<header class="flex flex-col gap-2">
+			<div class="text-xs uppercase tracking-[0.28em] text-neutral-500">Experience</div>
+			<h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Work Experience</h1>
+			<p class="max-w-2xl text-neutral-600">
+				From Fullstack to Lead Frontend Engineer. Focused on scalable architecture, performance
+				optimization, and bridging product design with engineering.
+			</p>
+		</header>
+		<div class="relative flex flex-col gap-6 before:absolute before:left-[0.4rem] before:top-2 before:bottom-2 before:w-px before:bg-gradient-to-b before:from-transparent before:via-neutral-200 before:to-transparent">
+			{experiences.map((item) => (
+				<TimelineItem item={item} showRelated={true} />
+			))}
+		</div>
+	</div>
+</BaseLayout>
