@@ -4,3 +4,27 @@
 	--color-slate-50: #f8fafc;
 	--font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
+
+@layer components {
+	.tech-marquee {
+		overflow: hidden;
+	}
+
+	.marquee {
+		animation: marquee 40s linear infinite;
+		width: max-content;
+	}
+
+	.marquee:hover {
+		animation-play-state: paused;
+	}
+}
+
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
