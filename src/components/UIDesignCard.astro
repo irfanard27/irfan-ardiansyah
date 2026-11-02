@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import type { UIDesignItem } from "../data/uiDesigns";
+
+interface Props {
+	item: UIDesignItem;
+}
+
+const { item } = Astro.props;
+---
+
+<article
+	class="group flex w-full flex-col overflow-hidden rounded-2xl bg-white shadow-[0_10px_30px_-20px_rgba(15,23,42,0.25)]"
+>
+	<div class="overflow-hidden border-b border-neutral-100 bg-neutral-100">
+		<Image
+			src={item.image}
+			alt={`${item.title} UI/UX design preview`}
+			widths={[400, 640, 960]}
+			sizes="(min-width: 640px) 500px, 100vw"
+			loading="lazy"
+			decoding="async"
+			class="h-auto w-full transition-transform duration-500 ease-out group-hover:scale-[1.015]"
+		/>
+	</div>
+	<div class="flex flex-col gap-2 p-6 sm:p-7">
+		<div class="text-xs uppercase tracking-[0.28em] text-neutral-500">
+			UI/UX Design
+		</div>
+		<h3 class="text-xl font-semibold tracking-tight sm:text-2xl">
+			{item.title}
+		</h3>
+		<p class="text-neutral-600">{item.description}</p>
+	</div>
+</article>
