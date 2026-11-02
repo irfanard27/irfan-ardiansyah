@@ -31,7 +31,7 @@ export const experiences: ExperienceItem[] = [
 		id: "espace",
 		company: "Espace Limited",
 		role: "Product Engineer - Frontend Focused (Freelance)",
-		period: "February 2026 – October 2026",
+		period: "June 2026 – October 2026",
 		location: "Hong Kong (Remote)",
 		type: "freelance",
 		keyContributions: [
@@ -48,7 +48,7 @@ export const experiences: ExperienceItem[] = [
 		id: "harmonia",
 		company: "HarmoniaHR",
 		role: "Senior Software Engineer",
-		period: "June 2026 – October 2026",
+		period: "February 2026 – October 2026",
 		location: "Indonesia",
 		type: "full-time",
 		keyContributions: [
@@ -57,7 +57,7 @@ export const experiences: ExperienceItem[] = [
 			"Collaborated with product and cross-functional teams to deliver reliable, user-centric solutions.",
 			"Contributed to system design, code quality, and engineering best practices.",
 		],
-		techStack: ["React.js", "TypeScript", "SaaS", "Frontend Architecture"],
+		techStack: ["React.js", "TypeScript", "SaaS", "Frontend Architecture", "Golang"],
 	},
 	// {
 	// 	id: "happy-day",
