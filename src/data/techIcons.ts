@@ -42,6 +42,7 @@ export const techIcons: Record<string, TechIcon> = {
 	},
 	Python: { icon: simpleIcon("python", "#3776AB"), color: "#3776AB" },
 	Go: { icon: simpleIcon("go", "#00ADD8"), color: "#00ADD8" },
+	Golang: { icon: simpleIcon("go", "#00ADD8"), color: "#00ADD8" },
 	Redux: { icon: simpleIcon("redux", "#764ABC"), color: "#764ABC" },
 	"Redux Toolkit": { icon: simpleIcon("redux", "#764ABC"), color: "#764ABC" },
 	"GitHub Actions": {
