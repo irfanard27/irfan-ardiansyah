@@ -4,21 +4,17 @@ import TimelineItem from "../components/TimelineItem.astro";
 import WorkCard from "../components/WorkCard.astro";
 import { experiences } from "../data/experience";
 import { works } from "../data/works";
+import { links } from "../data/site";
 
 const featuredExperience = experiences.filter((item) =>
-	[
-		"stashworks-lead",
-		"stashworks-senior",
-		"dnet-frontend",
-		"espace",
-	].includes(item.id),
+	["prima-abadi", "stashworks-lead", "espace"].includes(item.id),
 );
 
 const featuredWorks = works.filter((item) => item.featured);
 ---
 
 <BaseLayout
-	title="Muhammad Irfan Ardiansyah — Senior Software Engineer | Frontend Specialist"
+	title="Muhammad Irfan Ardiansyah — Senior Software Engineer | Frontend Specialist | AI Product Builder"
 	description="Senior Software Engineer with 10+ years of experience building scalable SaaS platforms, enterprise applications, and cloud-native systems. Bridging product design and engineering."
 >
 	<div class="flex flex-col gap-16">
@@ -27,7 +23,8 @@ const featuredWorks = works.filter((item) => item.featured);
 				<div
 					class="text-xs uppercase tracking-[0.28em] text-neutral-500"
 				>
-					Senior Software Engineer | Frontend Specialist
+					Senior Software Engineer | Frontend Specialist | AI Product
+					Builder
 				</div>
 				<h1
 					class="text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl"
@@ -291,13 +288,11 @@ const featuredWorks = works.filter((item) => item.featured);
 					systems.
 				</p>
 			</header>
-			<div class="flex flex-col gap-6">
+			<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 				{
-					featuredExperience
-						.slice(0, 3)
-						.map((item) => (
-							<TimelineItem item={item} showRelated={false} />
-						))
+					featuredExperience.map((item) => (
+						<TimelineItem item={item} showRelated={false} />
+					))
 				}
 			</div>
 			<a
@@ -457,20 +452,20 @@ const featuredWorks = works.filter((item) => item.featured);
 					Let's build something great
 				</h2>
 				<p class="max-w-2xl text-neutral-600">
-					Available for Remote Global Roles. Open to frontend/lead
-					frontend opportunities.
+					Available for Remote Global Roles. Open to Senior Software
+					Engineer, Senior/Lead Frontend Engineer, Product Engineer.
 				</p>
 			</header>
 			<div class="flex flex-wrap items-center gap-3">
 				<a
 					class="inline-flex items-center gap-2 rounded-full border border-neutral-900 bg-neutral-900 px-6 py-2.5 font-medium text-white transition hover:brightness-90"
-					href="mailto:personal.irfanardiansyah@gmail.com"
+					href={links.email}
 				>
 					Email Me
 				</a>
 				<a
 					class="inline-flex items-center gap-2 rounded-full border border-neutral-200 px-6 py-2.5 font-medium text-neutral-900 transition hover:border-neutral-900"
-					href="https://www.linkedin.com/in/muhammad-irfan-ardiansyah-188565152/"
+					href={links.linkedin}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -478,7 +473,7 @@ const featuredWorks = works.filter((item) => item.featured);
 				</a>
 				<a
 					class="inline-flex items-center gap-2 rounded-full border border-neutral-200 px-6 py-2.5 font-medium text-neutral-900 transition hover:border-neutral-900"
-					href="https://github.com/irfanard27"
+					href={links.github}
 					target="_blank"
 					rel="noopener noreferrer"
 				>

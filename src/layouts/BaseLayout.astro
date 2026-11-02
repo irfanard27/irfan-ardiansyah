@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import "../assets/global.css";
 import icon from "../assets/img/icon.svg";
+import { links } from "../data/site";
 
 interface Props {
 	title?: string;
@@ -34,7 +35,9 @@ const {
 			rel="stylesheet"
 		/>
 	</head>
-	<body class="bg-slate-50 text-neutral-900 antialiased leading-7 text-base">
+	<body
+		class="bg-slate-50 text-neutral-900 antialiased leading-7 text-base overflow-x-clip"
+	>
 		<header
 			class="site-header sticky top-0 z-10 border-b border-transparent bg-transparent transition-all duration-300 ease-out"
 			id="site-header"
@@ -59,7 +62,7 @@ const {
 					>
 					<a
 						class="transition-colors hover:text-neutral-900"
-						href="mailto:personal.irfanardiansyah@gmail.com"
+						href={links.email}
 						>Contact</a
 					>
 				</div>
@@ -111,18 +114,17 @@ const {
 				<div class="flex items-center gap-4">
 					<a
 						class="transition-colors hover:text-neutral-900"
-						href="mailto:personal.irfanardiansyah@gmail.com"
-						>Email</a
+						href={links.email}>Email</a
 					>
 					<a
 						class="transition-colors hover:text-neutral-900"
-						href="https://www.linkedin.com/in/irfanardiansyah/"
+						href={links.linkedin}
 						target="_blank"
 						rel="noopener noreferrer">LinkedIn</a
 					>
 					<a
 						class="transition-colors hover:text-neutral-900"
-						href="https://github.com/irfanardiansyah"
+						href={links.github}
 						target="_blank"
 						rel="noopener noreferrer">GitHub</a
 					>

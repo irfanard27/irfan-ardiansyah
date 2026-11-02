@@ -1,5 +1,6 @@
 ---
 import type { ExperienceItem } from "../data/experience";
+import { techIcons } from "../data/techIcons";
 
 interface Props {
 	item: ExperienceItem;
@@ -7,18 +8,26 @@ interface Props {
 }
 
 const { item, showRelated = true } = Astro.props;
+
+const typeLabels: Record<ExperienceItem["type"], string> = {
+	"full-time": "Full-time",
+	freelance: "Freelance",
+	"part-time": "Part-time",
+	contract: "Contract",
+};
+
+const typeLabel = typeLabels[item.type];
 ---
 
 {
 	!showRelated ? (
-		<article class="flex w-full flex-col gap-4 rounded-2xl bg-white p-6 shadow-[0_10px_30px_-20px_rgba(15,23,42,0.25)] sm:flex-row sm:items-center sm:justify-between sm:p-7">
+		<a
+			href="/experience"
+			class="flex w-full flex-col gap-4 rounded-2xl bg-white p-6 shadow-[0_10px_30px_-20px_rgba(15,23,42,0.25)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-24px_rgba(15,23,42,0.35)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 sm:flex-row sm:items-start sm:justify-between sm:p-7"
+		>
 			<div class="flex flex-col gap-1">
 				<div class="text-xs uppercase tracking-[0.28em] text-neutral-500">
-					{item.type === "freelance"
-						? "Freelance"
-						: item.type === "contract"
-							? "Contract"
-							: "Full-time"}
+					{typeLabel}
 				</div>
 				<h3 class="text-xl tracking-tight sm:text-2xl">{item.role}</h3>
 				<div class="flex flex-wrap items-center gap-2 text-[0.98rem] text-neutral-600">
@@ -29,24 +38,12 @@ const { item, showRelated = true } = Astro.props;
 					<span>{item.location}</span>
 				</div>
 			</div>
-			{item.relatedWorks && item.relatedWorks.length > 0 && (
-				<a
-					class="inline-flex items-center gap-2 text-neutral-600 transition-colors hover:text-neutral-900"
-					href="/works"
-				>
-					Related works →
-				</a>
-			)}
-		</article>
+		</a>
 	) : (
 		<article class="flex w-full flex-col gap-5 rounded-2xl bg-white p-6 shadow-[0_10px_30px_-20px_rgba(15,23,42,0.25)] sm:p-8">
 			<header class="flex flex-col gap-1">
 				<div class="text-xs uppercase tracking-[0.28em] text-neutral-500">
-					{item.type === "freelance"
-						? "Freelance"
-						: item.type === "contract"
-							? "Contract"
-							: "Full-time"}
+					{typeLabel}
 				</div>
 				<h3 class="text-xl font-semibold tracking-tight sm:text-2xl">
 					{item.role}
@@ -74,11 +71,31 @@ const { item, showRelated = true } = Astro.props;
 					Tech Stack
 				</p>
 				<div class="flex flex-wrap gap-2">
-					{item.techStack.map((tech) => (
-						<span class="inline-flex items-center rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-600">
-							{tech}
-						</span>
-					))}
+					{item.techStack.map((tech) => {
+						const meta = techIcons[tech];
+						return (
+							<span
+								class="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-600"
+								style={
+									meta
+										? `background-color: ${meta.color}1a; border-color: ${meta.color}40;`
+										: undefined
+								}
+							>
+								{meta && (
+									<img
+										src={meta.icon}
+										alt=""
+										aria-hidden="true"
+										loading="lazy"
+										decoding="async"
+										class="h-3.5 w-3.5"
+									/>
+								)}
+								{tech}
+							</span>
+						);
+					})}
 				</div>
 			</div>
 			{item.relatedWorks && item.relatedWorks.length > 0 && (
