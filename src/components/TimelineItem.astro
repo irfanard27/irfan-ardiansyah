@@ -74,14 +74,7 @@ const typeLabel = typeLabels[item.type];
 					{item.techStack.map((tech) => {
 						const meta = techIcons[tech];
 						return (
-							<span
-								class="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-600"
-								style={
-									meta
-										? `background-color: ${meta.color}1a; border-color: ${meta.color}40;`
-										: undefined
-								}
-							>
+							<span class="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-600">
 								{meta && (
 									<img
 										src={meta.icon}
