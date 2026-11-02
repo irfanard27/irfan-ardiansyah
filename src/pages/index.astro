@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimelineItem from "../components/TimelineItem.astro";
 import WorkCard from "../components/WorkCard.astro";
+import TechTag from "../components/TechTag.astro";
 import { experiences } from "../data/experience";
 import { works } from "../data/works";
 import { links } from "../data/site";
@@ -350,30 +351,12 @@ const featuredWorks = works.filter((item) => item.featured);
 				>
 					<h3 class="text-lg tracking-tight">Frontend</h3>
 					<div class="flex flex-wrap gap-2">
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>React.js</span
-						>
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>TypeScript</span
-						>
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>Next.js</span
-						>
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>Astro</span
-						>
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>Redux Toolkit</span
-						>
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>GraphQL</span
-						>
+						<TechTag label="React.js" />
+						<TechTag label="TypeScript" />
+						<TechTag label="Next.js" />
+						<TechTag label="Astro" />
+						<TechTag label="Redux Toolkit" />
+						<TechTag label="GraphQL" />
 					</div>
 				</article>
 				<article
@@ -381,30 +364,12 @@ const featuredWorks = works.filter((item) => item.featured);
 				>
 					<h3 class="text-lg tracking-tight">Backend & Data</h3>
 					<div class="flex flex-wrap gap-2">
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>Ruby on Rails</span
-						>
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>Node.js</span
-						>
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>PostgreSQL</span
-						>
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>MySQL</span
-						>
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>MongoDB</span
-						>
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>Redis</span
-						>
+						<TechTag label="Ruby on Rails" />
+						<TechTag label="Node.js" />
+						<TechTag label="PostgreSQL" />
+						<TechTag label="MySQL" />
+						<TechTag label="MongoDB" />
+						<TechTag label="Redis" />
 					</div>
 				</article>
 				<article
@@ -412,30 +377,12 @@ const featuredWorks = works.filter((item) => item.featured);
 				>
 					<h3 class="text-lg tracking-tight">Cloud, DevOps & AI</h3>
 					<div class="flex flex-wrap gap-2">
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>GCP</span
-						>
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>Docker</span
-						>
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>Kubernetes</span
-						>
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>CI/CD</span
-						>
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>GitHub Actions</span
-						>
-						<span
-							class="inline-flex items-center rounded-full border border-neutral-200 px-3 py-1 text-sm text-neutral-600"
-							>AI-assisted Development</span
-						>
+						<TechTag label="GCP" />
+						<TechTag label="Docker" />
+						<TechTag label="Kubernetes" />
+						<TechTag label="CI/CD" />
+						<TechTag label="GitHub Actions" />
+						<TechTag label="AI-assisted Development" />
 					</div>
 				</article>
 			</div>

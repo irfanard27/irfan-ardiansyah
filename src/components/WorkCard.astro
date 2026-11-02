@@ -1,5 +1,6 @@
 ---
 import type { WorkItem } from "../data/works";
+import TechTag from "./TechTag.astro";
 
 interface Props {
 	item: WorkItem;
@@ -46,9 +47,7 @@ const { item } = Astro.props;
 		<div class="flex flex-wrap gap-2">
 			{
 				item.techStack.map((tech) => (
-					<span class="inline-flex items-center rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-600">
-						{tech}
-					</span>
+					<TechTag label={tech} />
 				))
 			}
 		</div>

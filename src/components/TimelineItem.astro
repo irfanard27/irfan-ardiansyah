@@ -1,6 +1,6 @@
 ---
 import type { ExperienceItem } from "../data/experience";
-import { techIcons } from "../data/techIcons";
+import TechTag from "./TechTag.astro";
 
 interface Props {
 	item: ExperienceItem;
@@ -71,24 +71,9 @@ const typeLabel = typeLabels[item.type];
 					Tech Stack
 				</p>
 				<div class="flex flex-wrap gap-2">
-					{item.techStack.map((tech) => {
-						const meta = techIcons[tech];
-						return (
-							<span class="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-3 py-1 text-sm text-neutral-600">
-								{meta && (
-									<img
-										src={meta.icon}
-										alt=""
-										aria-hidden="true"
-										loading="lazy"
-										decoding="async"
-										class="h-3.5 w-3.5"
-									/>
-								)}
-								{tech}
-							</span>
-						);
-					})}
+					{item.techStack.map((tech) => (
+						<TechTag label={tech} />
+					))}
 				</div>
 			</div>
 			{item.relatedWorks && item.relatedWorks.length > 0 && (
