@@ -44,14 +44,17 @@ const {
 			id="site-header"
 		>
 			<nav
-				class="mx-auto flex w-[min(1080px,100%)] items-center justify-between gap-4 px-6 py-3"
+				class="mx-auto flex w-[min(1080px,100%)] items-center justify-between gap-4 px-5 py-3 sm:px-6"
 			>
-				<a class="font-semibold tracking-tight flex gap-2" href="/">
-					<Image src={icon} alt="Irfan Ardiansyah" height={22} />
-					Irfan Ardiansyah
+				<a
+					class="-m-2 flex shrink-0 items-center gap-2 p-2 font-semibold tracking-tight"
+					href="/"
+				>
+					<Image src={icon} alt="" aria-hidden="true" height={22} />
+					<span class="sr-only sm:not-sr-only">Irfan Ardiansyah</span>
 				</a>
 				<div
-					class="flex items-center gap-5 text-[0.98rem] text-neutral-600"
+					class="flex items-center gap-4 text-[0.95rem] text-neutral-600 sm:gap-5 sm:text-[0.98rem]"
 				>
 					<a
 						class="transition-colors hover:text-neutral-900"
@@ -102,13 +105,13 @@ const {
 			window.addEventListener("scroll", onScroll, { passive: true });
 		</script>
 		<main
-			class="mx-auto flex w-[min(1080px,100%)] flex-col gap-24 px-6 py-16 sm:gap-32 sm:py-24"
+			class="mx-auto flex w-[min(1080px,100%)] flex-col gap-24 px-5 py-16 sm:gap-32 sm:px-6 sm:py-24"
 		>
 			<slot />
 		</main>
 		<footer class="border-t border-neutral-200/80 bg-transparent">
 			<div
-				class="mx-auto flex w-[min(1080px,100%)] flex-wrap items-center justify-between gap-4 px-6 py-8 text-[0.98rem] text-neutral-600"
+				class="mx-auto flex w-[min(1080px,100%)] flex-wrap items-center justify-between gap-4 px-5 py-8 text-[0.98rem] text-neutral-600 sm:px-6"
 			>
 				<p>© {new Date().getFullYear()} Muhammad Irfan Ardiansyah</p>
 				<div class="flex items-center gap-4">
