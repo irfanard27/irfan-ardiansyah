@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import "../assets/global.css";
 import icon from "../assets/img/icon.svg";
 import { links } from "../data/site";
+import Analytics from '@vercel/analytics/astro'
 
 interface Props {
 	title?: string;
@@ -131,4 +132,6 @@ const {
 			</div>
 		</footer>
 	</body>
+
+	<Analytics />
 </html>
