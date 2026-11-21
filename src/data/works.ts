@@ -87,3 +87,29 @@ export const works: WorkItem[] = [
 		relatedExperienceIds: ["indoartha"],
 	},
 ];
+
+export const mobiles: WorkItem[] = [
+	{
+		id: "harmoniahr-mobile",
+		title: "HarmoniaHR Mobile App",
+		type: "work",
+		role: "Product Engineer - Frontend Focused",
+		description:
+			"Mobile application for HR management, built with React Native and integrated with the HarmoniaHR platform for real-time data access",
+		impact: "mobile version of the HR management platform, enabling employees to access HR services on-the-go.",
+		techStack: ["REST API", "Expo", "React Native"],
+		relatedExperienceIds: ["product-engineer"],
+		featured: true,
+
+	}, {
+		id: "stashworks-packer",
+		title: "Stashworks Packer Mobile App",
+		type: "work",
+		role: "Senior/Lead Frontend Engineer",
+		description:
+			"Mobile application for warehouse operations, built with Flutter and integrated with the WMS platform for real-time data access and task management.",
+		impact: "improve internal packing operations and reduce errors in warehouse management.",
+		techStack: ["REST API", "Flutter"],
+		relatedExperienceIds: ["stashworks-senior", "stashworks-lead"],
+		featured: true,
+	},]

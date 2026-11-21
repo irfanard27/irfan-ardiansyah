@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import WorkCard from "../components/WorkCard.astro";
 import UIDesignCard from "../components/UIDesignCard.astro";
-import { works } from "../data/works";
+import { works, mobiles } from "../data/works";
 import { uiDesigns } from "../data/uiDesigns";
 ---
 
@@ -15,8 +15,8 @@ import { uiDesigns } from "../data/uiDesigns";
 			<div class="text-xs uppercase tracking-[0.28em] text-neutral-500">Works</div>
 			<h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Selected Portfolio</h1>
 			<p class="max-w-2xl text-neutral-600">
-				Proof of work across SaaS platforms, enterprise systems, and freelance projects —
-				alongside selected UI/UX design explorations.
+				Proof of work across SaaS platforms, enterprise systems, mobile apps, and freelance
+				projects — alongside selected UI/UX design explorations.
 			</p>
 		</header>
 
@@ -42,6 +42,19 @@ import { uiDesigns } from "../data/uiDesigns";
 			<button
 				type="button"
 				role="tab"
+				id="works-tab-mobile"
+				aria-controls="works-panel-mobile"
+				aria-selected="false"
+				tabindex="-1"
+				data-works-tab="mobile"
+				class="inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-medium text-neutral-600 transition hover:text-neutral-900 aria-selected:bg-neutral-900 aria-selected:text-white"
+			>
+				Mobile
+				<span class="text-xs opacity-70">{mobiles.length}</span>
+			</button>
+			<button
+				type="button"
+				role="tab"
 				id="works-tab-ui-ux"
 				aria-controls="works-panel-ui-ux"
 				aria-selected="false"
@@ -62,6 +75,18 @@ import { uiDesigns } from "../data/uiDesigns";
 		>
 			<div class="grid gap-6 sm:grid-cols-2">
 				{works.map((item) => <WorkCard item={item} />)}
+			</div>
+		</div>
+
+		<div
+			role="tabpanel"
+			id="works-panel-mobile"
+			aria-labelledby="works-tab-mobile"
+			data-works-panel="mobile"
+			hidden
+		>
+			<div class="grid gap-6 sm:grid-cols-2">
+				{mobiles.map((item) => <WorkCard item={item} />)}
 			</div>
 		</div>
 

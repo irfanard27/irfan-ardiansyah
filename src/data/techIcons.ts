@@ -8,6 +8,11 @@ const simpleIcon = (slug: string, color: string) =>
 
 export const techIcons: Record<string, TechIcon> = {
 	"React.js": { icon: simpleIcon("react", "#61DAFB"), color: "#61DAFB" },
+	"React Native": {
+		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/reactnative/reactnative-original.svg",
+		color: "#61DAFB",
+	},
+	Expo: { icon: simpleIcon("expo", "#1C2024"), color: "#1C2024" },
 	TypeScript: { icon: simpleIcon("typescript", "#3178C6"), color: "#3178C6" },
 	JavaScript: { icon: simpleIcon("javascript", "#F7DF1E"), color: "#F7DF1E" },
 	"Next.js": { icon: simpleIcon("nextdotjs", "#000000"), color: "#000000" },
